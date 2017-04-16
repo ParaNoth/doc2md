@@ -3,6 +3,7 @@ import outputtxt
 import renamepic
 import sys
 import os
+import md2html
 
 def main(dir):
 
@@ -20,6 +21,7 @@ def main(dir):
         renamepic.outputtxt(temppath)
     for files in filelist1:
         outputtxt.output(files)
+    md2html.md2html(dir)
 
 if __name__ == '__main__':
     ddir = sys.path[0]
