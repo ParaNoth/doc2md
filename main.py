@@ -16,10 +16,12 @@ def main(dir):
     for files in filelist1:
         temppath = files + '.files'
         print temppath
-        renamepic.renamepic(temppath)
-        renamepic.outputtxt(temppath)
+        havepic = os.path.exists(temppath)
+        if havepic:
+            renamepic.renamepic(temppath)
+            renamepic.outputtxt(temppath)
     for files in filelist1:
-        outputtxt.output(files)
+        outputtxt.output(files, havepic)
 
 if __name__ == '__main__':
     ddir = sys.path[0]

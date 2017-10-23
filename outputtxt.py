@@ -2,12 +2,14 @@
 #-*- coding: gbk -*-
 
 import re
-def output(filename):
+def output(filename, havepic):
     txtnum = 0
     file1name = filename+'.txt'
-    file2name = filename+'.files/name.txt'
+    if havepic:
+        file2name = filename+'.files/name.txt'
+        file2 = open(file2name, 'r')
     file1 = open(file1name, 'r')
-    file2 = open(file2name, 'r')
+
     file3 = open('filetxt0.txt', 'w')
     txtbuf=[]
     myline=["",""]
