@@ -37,7 +37,10 @@ def outputtxt(dir):
         #<p style="text-align: left;"><img class="alignnone size-full wp-image-1345" src="http://fd.lidongpeng.com.cn/wp-content/uploads/2017/01/5-5-1.png" alt="5-5" width="889" height="218" /></p>
         #temptxt = "weith = " + str(weith) + "height = " + str(height) + "\n"
         #http://sii.fudan.edu.cn/wp-content/uploads/2017/03/0327150313image003.jpg
-        temptxt = r'<center>![](http://sii.fudan.edu.cn/wp-content/uploads/2017/04/'+ files + ')</center>' + '\n'
+        my_year = time.strftime('%Y',time.localtime(time.time()))
+        my_month = time.strftime('%m',time.localtime(time.time()))
+        #temptxt = r'<center>![](http://sii.fudan.edu.cn/wp-content/uploads/2017/04/'+ files + ')</center>' + '\n'
+        temptxt = r'<center>![](http://sii.fudan.edu.cn/wp-content/uploads/' + my_year + '/' + my_month + '/' + files + ')</center>' + '\n'
         nametxt.append(temptxt)
     file1.writelines(nametxt)
     file1.close()
